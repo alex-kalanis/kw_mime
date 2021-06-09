@@ -1,0 +1,32 @@
+{
+    "name": "alex-kalanis/kw_mime",
+    "description": "Determine file mime type in KWCMS",
+    "keywords": [
+        "mime",
+        "mimetype",
+        "files",
+        "file"
+    ],
+    "license": "BSD-3-Clause",
+    "type": "library",
+    "require": {
+        "alex-kalanis/kw_paths": "Paths for accessing targets in KWCMS",
+        "php": ">=7.2.0"
+    },
+    "require-dev": {
+        "ext-fileinfo": "*",
+        "phpunit/phpunit": ">=7.2"
+    },
+    "suggest": {
+        "ext-fileinfo": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "kalanis\\kw_mime\\": "php-src/"
+        }
+    },
+    "scripts": {
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
