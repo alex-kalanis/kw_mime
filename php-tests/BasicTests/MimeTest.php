@@ -11,9 +11,9 @@ class MimeTest extends CommonTestClass
 {
     public function testBasic(): void
     {
-        $path = new MimeType(true);
-        $this->assertEquals('video/webm', $path->mimeByExt('webm'));
-        $this->assertEquals('text/pascal', $path->mimeByExt('PAS'));
-        $this->assertEquals('application/octet-stream', $path->mimeByExt('FOO'));
+        new MimeType(true);
+        $this->assertEquals('video/webm', MimeType::mimeByExt('webm'));
+        $this->assertEquals('text/pascal', MimeType::mimeByExt('PAS'));
+        $this->assertEquals('application/octet-stream', MimeType::mimeByExt('FOO'));
     }
 }
