@@ -17,7 +17,7 @@ class MimeType
 {
     protected $localAtFirst = false;
     // todo: put this list somewhere in external resource
-    protected static $mimeTypes = [
+    protected $mimeTypes = [
         'atom' => 'application/atom+xml', // Atom XML
         'css' => 'text/css', // Cascading Style Sheets (CSS)
         'dtd' => 'application/xml-dtd',
@@ -577,7 +577,7 @@ class MimeType
     public function mimeByPath(string $path): string
     {
         if ($this->localAtFirst) {
-            return static::mimeByExt(Stuff::fileExt($path));
+            return $this->mimeByExt(Stuff::fileExt($path));
         }
         if (function_exists('mime_content_type')) {
             return mime_content_type($path);
@@ -593,13 +593,13 @@ class MimeType
         // @codeCoverageIgnoreEnd
         // @codeCoverageIgnoreStart
         // same as in localAtFirst
-        return static::mimeByExt(Stuff::fileExt($path));
+        return $this->mimeByExt(Stuff::fileExt($path));
     }
     // @codeCoverageIgnoreEnd
 
-    public static function mimeByExt(string $ext): string
+    public function mimeByExt(string $ext): string
     {
         $ext = strtolower($ext);
-        return isset(static::$mimeTypes[$ext]) ? static::$mimeTypes[$ext] : 'application/octet-stream';
+        return isset($this->mimeTypes[$ext]) ? $this->mimeTypes[$ext] : 'application/octet-stream';
     }
 }
