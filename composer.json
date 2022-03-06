@@ -10,7 +10,7 @@
     "license": "BSD-3-Clause",
     "type": "library",
     "require": {
-        "alex-kalanis/kw_paths": "Paths for accessing targets in KWCMS",
+        "alex-kalanis/kw_paths": ">=1.0",
         "php": ">=7.2.0"
     },
     "require-dev": {
