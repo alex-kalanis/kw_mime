@@ -9,7 +9,6 @@
     "php": ">=7.2.0"
   },
   "suggest": {
-    "alex-kalanis/kw_storage": "dev-master"
   },
   "require-dev": {
     "ext-fileinfo": "*"
