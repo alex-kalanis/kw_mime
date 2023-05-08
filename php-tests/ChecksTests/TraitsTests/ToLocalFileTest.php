@@ -19,7 +19,7 @@ class ToLocalFileTest extends CommonTestClass
         $lib->initTempFile();
         @unlink($lib->getTempFile());
         $this->expectException(MimeException::class);
-        $lib->convert('file', false);
+        $lib->convert('file', /** @scrutinizer ignore-type */ false);
     }
 
     /**
@@ -31,7 +31,7 @@ class ToLocalFileTest extends CommonTestClass
         $lib->initTempFile();
         @unlink($lib->getTempFile());
         $this->expectException(MimeException::class);
-        $lib->convert('file', null);
+        $lib->convert('file', /** @scrutinizer ignore-type */ null);
     }
 
     /**
@@ -45,7 +45,7 @@ class ToLocalFileTest extends CommonTestClass
         $this->assertEquals('test data', file_get_contents($pt1));
         @unlink($pt1);
         $lib->initTempFile();
-        $pt2 = $lib->convert('nums', 123456);
+        $pt2 = $lib->convert('nums', /** @scrutinizer ignore-type */ 123456);
         $this->assertEquals('123456', file_get_contents($pt2));
         @unlink($pt2);
     }

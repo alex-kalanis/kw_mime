@@ -33,11 +33,11 @@ class Factory
     public function getLibrary($source): IMime
     {
         if ($this->isMimeFunction()) {
-            if ($source instanceof IProcessFiles) {
+            if (is_object($source) && ($source instanceof IProcessFiles)) {
                 $lib = new DataFiles(null, $this->lang);
                 $lib->canUse($source);
                 return $lib;
-            } elseif ($source instanceof Storage) {
+            } elseif (is_object($source) && ($source instanceof Storage)) {
                 $lib = new DataStorage($this->lang);
                 $lib->canUse($source);
                 return $lib;
