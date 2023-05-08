@@ -4,7 +4,9 @@ namespace BasicTests;
 
 
 use CommonTestClass;
+use kalanis\kw_mime\MimeException;
 use kalanis\kw_mime\MimeType;
+use kalanis\kw_paths\PathsException;
 
 
 class MimeTest extends CommonTestClass
@@ -21,12 +23,14 @@ class MimeTest extends CommonTestClass
      * @param string $file
      * @param string $mime
      * @param bool $localAtFirst
+     * @throws MimeException
+     * @throws PathsException
      * @dataProvider fullProvider
      */
     public function testFull(string $file, string $mime, bool $localAtFirst): void
     {
         $lib = new MimeType($localAtFirst);
-        $this->assertEquals($mime, $lib->mimeByPath(__DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR . $file));
+        $this->assertEquals($mime, $lib->mimeByPath(realpath(__DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR . $file)));
     }
 
     public function fullProvider(): array

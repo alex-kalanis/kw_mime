@@ -1,6 +1,6 @@
 # kw_mime
 
-[![Build Status](https://travis-ci.org/alex-kalanis/kw_mime.svg?branch=master)](https://travis-ci.org/alex-kalanis/kw_mime)
+[![Build Status](https://app.travis-ci.com/alex-kalanis/kw_mime.svg?branch=master)](https://app.travis-ci.com/github/alex-kalanis/kw_mime)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/alex-kalanis/kw_mime/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/alex-kalanis/kw_mime/?branch=master)
 [![Latest Stable Version](https://poser.pugx.org/alex-kalanis/kw_mime/v/stable.svg?v=1)](https://packagist.org/packages/alex-kalanis/kw_mime)
 [![Minimum PHP Version](https://img.shields.io/badge/php-%3E%3D%207.3-8892BF.svg)](https://php.net/)
@@ -15,7 +15,7 @@ Simple library to access mime type of sent file. Just makes nice facade to mime 
 ```
 {
     "require": {
-        "alex-kalanis/kw_mime": "1.0"
+        "alex-kalanis/kw_mime": "2.0"
     }
 }
 ```

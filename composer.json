@@ -10,17 +10,21 @@
     "license": "BSD-3-Clause",
     "type": "library",
     "require": {
-        "alex-kalanis/kw_paths": ">=1.0",
-        "php": ">=7.2.0"
+        "alex-kalanis/kw_paths": ">=3.0",
+        "php": ">=7.3.0"
     },
     "require-dev": {
+        "alex-kalanis/kw_files": ">=3.0",
+        "alex-kalanis/kw_storage": ">=3.2",
         "ext-fileinfo": "*",
         "phpstan/phpstan": "^1.0",
         "phpstan/phpstan-phpunit": "^1.0",
         "friendsofphp/php-cs-fixer": "^3.0",
-        "phpunit/phpunit": ">=7.2"
+        "phpunit/phpunit": ">=7.2 <=9"
     },
     "suggest": {
+        "alex-kalanis/kw_files": "Accessing stored entries as files on some volume",
+        "alex-kalanis/kw_storage": "Universal storage library for store data as key-value pairs",
         "ext-fileinfo": "*"
     },
     "autoload": {
