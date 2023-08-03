@@ -6,7 +6,7 @@ namespace CheckTests;
 use CommonTestClass;
 use kalanis\kw_mime\Check\DataStorage;
 use kalanis\kw_mime\MimeException;
-use kalanis\kw_storage\Storage\Key\DirKey;
+use kalanis\kw_storage\Storage\Key;
 use kalanis\kw_storage\Storage;
 use kalanis\kw_storage\StorageException;
 
@@ -59,7 +59,7 @@ class DataStorageTest extends CommonTestClass
 
     protected function getProcessor(): Storage
     {
-        DirKey::setDir(__DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR);
+        Key\StaticPrefixKey::setPrefix(__DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR);
         $lib = new Storage(new Storage\Factory(new Storage\Key\Factory(), new Storage\Target\Factory()));
         $lib->init('volume');
         return $lib;

@@ -9,7 +9,7 @@ use kalanis\kw_files\Interfaces\IProcessFiles;
 use kalanis\kw_files\Processing\Storage\Files\Basic;
 use kalanis\kw_mime\Check\ResourceFiles;
 use kalanis\kw_mime\MimeException;
-use kalanis\kw_storage\Storage\Key\DirKey;
+use kalanis\kw_storage\Storage\Key;
 use kalanis\kw_storage\Storage\Storage;
 use kalanis\kw_storage\Storage\Target\Volume;
 
@@ -61,8 +61,8 @@ class ResourceFilesTest extends CommonTestClass
 
     protected function getProcessor(): IProcessFiles
     {
-        DirKey::setDir(__DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR);
-        return new Basic(new Storage(new DirKey(), new Volume()));
+        Key\StaticPrefixKey::setPrefix(__DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR);
+        return new Basic(new Storage(new Key\StaticPrefixKey(), new Volume()));
     }
 }
 

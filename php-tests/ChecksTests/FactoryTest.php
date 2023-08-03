@@ -31,7 +31,7 @@ class FactoryTest extends CommonTestClass
     public function fullProvider(): array
     {
         return [
-            [new Basic(new Storage\Storage(new Storage\Key\DirKey(), new Storage\Target\Volume())), Check\DataFiles::class],
+            [new Basic(new Storage\Storage(new Storage\Key\StaticPrefixKey(), new Storage\Target\Volume())), Check\DataFiles::class],
             [new Storage(new Storage\Factory(new Storage\Key\Factory(), new Storage\Target\Factory())), Check\DataStorage::class],
             ['test.pas', Check\LocalVolume1::class],
             [123456, Check\CustomList::class],

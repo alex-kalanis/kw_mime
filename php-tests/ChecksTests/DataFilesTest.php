@@ -59,8 +59,8 @@ class DataFilesTest extends CommonTestClass
 
     protected function getProcessor(): IProcessFiles
     {
-        Storage\Key\DirKey::setDir(__DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR);
-        return new Basic(new Storage\Storage(new Storage\Key\DirKey(), new Storage\Target\Volume()));
+        Storage\Key\StaticPrefixKey::setPrefix(__DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR);
+        return new Basic(new Storage\Storage(new Storage\Key\StaticPrefixKey(), new Storage\Target\Volume()));
     }
 }
 
