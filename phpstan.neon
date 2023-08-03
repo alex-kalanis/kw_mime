@@ -11,6 +11,6 @@ parameters:
 	bootstrapFiles:
 		- 'php-tests/_bootstrap.php'
 #	checkGenericClassInNonGenericObjectType: false
-#	ignoreErrors:
-#		# solved by unit tests
-#		- '#Cannot call method [a-zA-Z0-9\\_]+\(\) on kalanis\\kw_storage\\Storage#'
+	ignoreErrors:
+		# quality WTF - strval, intval
+		- '#Parameter \#1 \$va[rl]u?e? of function [si][tn][rt]val expects#'
