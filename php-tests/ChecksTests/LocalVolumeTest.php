@@ -83,7 +83,7 @@ class LocalVolumeTest extends CommonTestClass
     public function fullProvider1(): array
     {
         return [
-            ['test.class', 'text/x-c'],
+            ['test.class', $this->defaultJavaFileMime()],
             ['test.pas', 'text/plain'],
         ];
     }

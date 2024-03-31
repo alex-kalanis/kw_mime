@@ -52,7 +52,7 @@ class DataFilesTest extends CommonTestClass
     public function fullProvider(): array
     {
         return [
-            ['test.class', 'text/x-c'],
+            ['test.class', $this->defaultJavaFileMime()],
             ['test.pas', 'text/plain'],
         ];
     }

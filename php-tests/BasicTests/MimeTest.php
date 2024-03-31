@@ -36,7 +36,7 @@ class MimeTest extends CommonTestClass
     public function fullProvider(): array
     {
         return [
-            ['test.class', 'text/x-c', false],
+            ['test.class', $this->defaultJavaFileMime(), false],
             ['test.pas', 'text/plain', false],
             ['test.class', 'application/java-vm', true],
             ['test.pas', 'text/pascal', true],

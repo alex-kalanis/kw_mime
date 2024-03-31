@@ -9,4 +9,8 @@ use PHPUnit\Framework\TestCase;
  */
 class CommonTestClass extends TestCase
 {
+    public function defaultJavaFileMime(): string
+    {
+        return (PHP_VERSION_ID >= 80300) ? 'text/x-java' : 'text/x-c';
+    }
 }
