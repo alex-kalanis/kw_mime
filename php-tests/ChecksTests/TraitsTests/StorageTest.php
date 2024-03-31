@@ -7,12 +7,14 @@ use CommonTestClass;
 use kalanis\kw_mime\Check\Traits\TStorage;
 use kalanis\kw_mime\MimeException;
 use kalanis\kw_storage\Storage;
+use kalanis\kw_storage\StorageException;
 
 
 class StorageTest extends CommonTestClass
 {
     /**
      * @throws MimeException
+     * @throws StorageException
      */
     public function testOwn(): void
     {

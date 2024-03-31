@@ -40,6 +40,7 @@ class DataStorageTest extends CommonTestClass
      * @param string $file
      * @param string $mime
      * @throws MimeException
+     * @throws StorageException
      * @dataProvider fullProvider
      */
     public function testFull(string $file, string $mime): void
@@ -57,6 +58,10 @@ class DataStorageTest extends CommonTestClass
         ];
     }
 
+    /**
+     * @throws StorageException
+     * @return Storage
+     */
     protected function getProcessor(): Storage
     {
         Key\StaticPrefixKey::setPrefix(__DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR);

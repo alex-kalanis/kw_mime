@@ -70,8 +70,7 @@ class XToLocalFile
 {
     use TToLocalFile;
 
-    /** @var string|null */
-    protected $tempFile = null;
+    protected ?string $tempFile = null;
 
     /**
      * @param string $name

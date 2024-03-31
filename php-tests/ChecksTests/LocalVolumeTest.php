@@ -38,8 +38,8 @@ class LocalVolumeTest extends CommonTestClass
     public function testCannotMime1(): void
     {
         $lib = new XFLocalVolume12();
-        $this->expectException(MimeException::class);
         $this->expectExceptionMessage('mock 1');
+        $this->expectException(MimeException::class);
         $lib->getMime(['whatever']);
     }
 
@@ -49,8 +49,8 @@ class LocalVolumeTest extends CommonTestClass
     public function testCannotMime2(): void
     {
         $lib = new XFLocalVolume22();
-        $this->expectException(MimeException::class);
         $this->expectExceptionMessage('mock 2');
+        $this->expectException(MimeException::class);
         $lib->getMime(['whatever']);
     }
 
