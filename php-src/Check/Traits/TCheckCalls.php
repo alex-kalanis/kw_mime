@@ -9,7 +9,7 @@ use kalanis\kw_mime\MimeException;
 /**
  * Trait TCheckCalls
  * @package kalanis\kw_mime\Check\Traits
- * Check some parts of the system - some thing might not be available on selected instance
+ * Check some parts of the system - some things might not be available on selected instance
  */
 trait TCheckCalls
 {

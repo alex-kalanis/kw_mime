@@ -1,13 +1,12 @@
 <?php
 
-namespace CheckTests;
+namespace tests\ChecksTests;
 
 
-use CommonTestClass;
+use tests\CommonTestClass;
 use kalanis\kw_mime\Check\LocalVolume1;
 use kalanis\kw_mime\Check\LocalVolume2;
 use kalanis\kw_mime\MimeException;
-use kalanis\kw_paths\PathsException;
 
 
 class LocalVolumeTest extends CommonTestClass
@@ -94,51 +93,5 @@ class LocalVolumeTest extends CommonTestClass
             ['test.class', 'text/plain; charset=us-ascii'],
             ['test.pas', 'text/plain; charset=us-ascii'],
         ];
-    }
-}
-
-
-class XFLocalVolume11 extends LocalVolume1
-{
-    public function isMimeFunction(): bool
-    {
-        return false;
-    }
-}
-
-
-class XFLocalVolume21 extends LocalVolume2
-{
-    public function isMimeClass(): bool
-    {
-        return false;
-    }
-}
-
-
-class XFLocalVolume12 extends LocalVolume1
-{
-    /**
-     * @param string[] $path
-     * @throws PathsException
-     * @return string
-     */
-    protected function pathOnVolume(array $path): string
-    {
-        throw new PathsException('mock 1');
-    }
-}
-
-
-class XFLocalVolume22 extends LocalVolume2
-{
-    /**
-     * @param string[] $path
-     * @throws PathsException
-     * @return string
-     */
-    protected function pathOnVolume(array $path): string
-    {
-        throw new PathsException('mock 2');
     }
 }

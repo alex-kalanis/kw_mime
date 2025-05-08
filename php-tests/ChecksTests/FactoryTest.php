@@ -1,9 +1,9 @@
 <?php
 
-namespace CheckTests;
+namespace tests\ChecksTests;
 
 
-use CommonTestClass;
+use tests\CommonTestClass;
 use kalanis\kw_files\Processing\Storage\Files\Basic;
 use kalanis\kw_mime\Check;
 use kalanis\kw_storage\Storage;
@@ -40,13 +40,3 @@ class FactoryTest extends CommonTestClass
         ];
     }
 }
-
-
-class XFFactory extends Check\Factory
-{
-    public function isMimeFunction(): bool
-    {
-        return false;
-    }
-}
-

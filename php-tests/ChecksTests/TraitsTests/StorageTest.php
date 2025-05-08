@@ -1,10 +1,9 @@
 <?php
 
-namespace ChecksTests\TraitsTests;
+namespace tests\ChecksTests\TraitsTests;
 
 
-use CommonTestClass;
-use kalanis\kw_mime\Check\Traits\TStorage;
+use tests\CommonTestClass;
 use kalanis\kw_mime\MimeException;
 use kalanis\kw_storage\Storage;
 use kalanis\kw_storage\StorageException;
@@ -34,10 +33,4 @@ class StorageTest extends CommonTestClass
         $this->expectException(MimeException::class);
         $lib->getStorage();
     }
-}
-
-
-class XStorage
-{
-    use TStorage;
 }

@@ -1,9 +1,9 @@
 <?php
 
-namespace CheckTests;
+namespace tests\ChecksTests;
 
 
-use CommonTestClass;
+use tests\CommonTestClass;
 use kalanis\kw_mime\Check\CustomList;
 use kalanis\kw_mime\MimeException;
 

@@ -1,9 +1,9 @@
 <?php
 
-namespace BasicTests;
+namespace tests\BasicTests;
 
 
-use CommonTestClass;
+use tests\CommonTestClass;
 use kalanis\kw_mime\MimeException;
 use kalanis\kw_mime\MimeType;
 use kalanis\kw_paths\PathsException;

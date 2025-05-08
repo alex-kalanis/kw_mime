@@ -1,9 +1,9 @@
 <?php
 
-namespace CheckTests;
+namespace tests\ChecksTests;
 
 
-use CommonTestClass;
+use tests\CommonTestClass;
 use kalanis\kw_mime\Check\DataStorage;
 use kalanis\kw_mime\MimeException;
 use kalanis\kw_storage\Storage\Key;
@@ -68,27 +68,5 @@ class DataStorageTest extends CommonTestClass
         $lib = new Storage(new Storage\Factory(new Storage\Key\Factory(), new Storage\Target\Factory()));
         $lib->init('volume');
         return $lib;
-    }
-}
-
-
-class XFDataStorage1 extends DataStorage
-{
-    protected function isMimeFunction(): bool
-    {
-        return false;
-    }
-}
-
-
-class XFDataStorage2 extends DataStorage
-{
-    /**
-     * @throws StorageException
-     * @return Storage
-     */
-    public function getStorage(): Storage
-    {
-        throw new StorageException('mock');
     }
 }

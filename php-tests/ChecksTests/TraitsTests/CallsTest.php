@@ -1,10 +1,9 @@
 <?php
 
-namespace ChecksTests\TraitsTests;
+namespace tests\ChecksTests\TraitsTests;
 
 
-use CommonTestClass;
-use kalanis\kw_mime\Check\Traits\TCheckCalls;
+use tests\CommonTestClass;
 use kalanis\kw_mime\MimeException;
 
 
@@ -42,10 +41,4 @@ class CallsTest extends CommonTestClass
         $lib->checkMimeFunction();
         $this->assertTrue(true);
     }
-}
-
-
-class XCalls
-{
-    use TCheckCalls;
 }

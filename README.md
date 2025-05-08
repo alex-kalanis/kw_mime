@@ -28,7 +28,33 @@ familiar with composer)
 
 3.) Just call setting and render
 
+```php
+// Somewhere in DI
+return function ($params): \kalanis\kw_mime\Interfaces\IMime {
+    return (new \kalanis\kw_mime\Check\Factory())->getLibrary($params);
+}
+```
+
+```php
+// In code
+class MimeExample
+{
+    public function __construct(
+        // ...
+        protected readonly \kalanis\kw_mime\Interfaces\IMime $mime,
+        // ...
+    ) {
+    }
+
+    public function which(string $file): string
+    {
+        $path = (new \kalanis\kw_paths\ArrayPath())->setString($file);
+        return $this->mime->getMime($path->getArray());
+    }
+}
+```
+
 ## Caveats
 
-If not speified by time of construction it uses external libraries in extension ext-fileinfo.
+If not specified by time of construction it uses external libraries in extension ext-fileinfo.
 Be aware of that.

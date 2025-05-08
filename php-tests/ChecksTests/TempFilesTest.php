@@ -1,10 +1,9 @@
 <?php
 
-namespace CheckTests;
+namespace tests\ChecksTests;
 
 
-use CommonTestClass;
-use kalanis\kw_files\FilesException;
+use tests\CommonTestClass;
 use kalanis\kw_files\Interfaces\IProcessFiles;
 use kalanis\kw_files\Processing\Storage\Files\Basic;
 use kalanis\kw_mime\Check\TempFiles;
@@ -63,23 +62,5 @@ class TempFilesTest extends CommonTestClass
     {
         Key\StaticPrefixKey::setPrefix(__DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR);
         return new Basic(new Storage(new Key\StaticPrefixKey(), new Volume()));
-    }
-}
-
-
-class XFTempFiles1 extends TempFiles
-{
-    protected function isMimeFunction(): bool
-    {
-        return false;
-    }
-}
-
-
-class XFTempFiles2 extends TempFiles
-{
-    public function getProcessFile(): IProcessFiles
-    {
-        throw new FilesException('mock');
     }
 }

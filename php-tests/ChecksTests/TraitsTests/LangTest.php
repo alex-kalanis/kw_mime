@@ -1,10 +1,9 @@
 <?php
 
-namespace ChecksTests\TraitsTests;
+namespace tests\ChecksTests\TraitsTests;
 
 
-use CommonTestClass;
-use kalanis\kw_mime\Check\Traits\TLang;
+use tests\CommonTestClass;
 use kalanis\kw_mime\Translations;
 
 
@@ -24,20 +23,5 @@ class LangTest extends CommonTestClass
         $lib = new XLang();
         $this->assertInstanceOf(Translations::class, $lib->getMiLang());
         $this->assertEquals('No storage set!', $lib->getMiLang()->miNoStorage());
-    }
-}
-
-
-class XLang
-{
-    use TLang;
-}
-
-
-class XTrLang extends Translations
-{
-    public function miNoStorage(): string
-    {
-        return 'test data';
     }
 }

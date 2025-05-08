@@ -1,10 +1,9 @@
 <?php
 
-namespace ChecksTests\TraitsTests;
+namespace tests\ChecksTests\TraitsTests;
 
 
-use CommonTestClass;
-use kalanis\kw_mime\Check\Traits\TToResource;
+use tests\CommonTestClass;
 use kalanis\kw_mime\MimeException;
 
 
@@ -49,22 +48,5 @@ class ToResourceTest extends CommonTestClass
         $res = @fopen('php://memory', 'r+');
         fwrite($res, 'okmijnuhb');
         $this->assertEquals('okmijnuhb', stream_get_contents($lib->convert('res', $res), -1, 0));
-    }
-}
-
-
-class XToResource
-{
-    use TToResource;
-
-    /**
-     * @param string $name
-     * @param string|resource $content
-     * @throws MimeException
-     * @return resource
-     */
-    public function convert(string $name, $content)
-    {
-        return $this->readSourceToResource($name, $content);
     }
 }

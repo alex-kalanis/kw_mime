@@ -1,10 +1,9 @@
 <?php
 
-namespace ChecksTests\TraitsTests;
+namespace tests\ChecksTests\TraitsTests;
 
 
-use CommonTestClass;
-use kalanis\kw_mime\Check\Traits\TToString;
+use tests\CommonTestClass;
 use kalanis\kw_mime\MimeException;
 
 
@@ -49,22 +48,5 @@ class ToStringTest extends CommonTestClass
         $res = @fopen('php://memory', 'r+');
         fwrite($res, 'okmijnuhb');
         $this->assertEquals('okmijnuhb', $lib->convert('res', $res));
-    }
-}
-
-
-class XToString
-{
-    use TToString;
-
-    /**
-     * @param string $name
-     * @param string|resource $content
-     * @throws MimeException
-     * @return string
-     */
-    public function convert(string $name, $content): string
-    {
-        return $this->readSourceToString($name, $content);
     }
 }

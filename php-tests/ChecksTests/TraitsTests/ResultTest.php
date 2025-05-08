@@ -1,10 +1,9 @@
 <?php
 
-namespace CheckTests\TraitsTests;
+namespace tests\ChecksTests\TraitsTests;
 
 
-use CommonTestClass;
-use kalanis\kw_mime\Check\Traits\TResult;
+use tests\CommonTestClass;
 
 
 class ResultTest extends CommonTestClass
@@ -33,10 +32,4 @@ class ResultTest extends CommonTestClass
             [new \stdClass(), 'application/octet-stream'],
         ];
     }
-}
-
-
-class XResult
-{
-    use TResult;
 }
