@@ -19,5 +19,5 @@ return $config
     ->ignoreErrorsOnPackageAndPath('alex-kalanis/kw_files', __DIR__ . '/php-src/Check/TempFiles.php', [ErrorType::DEV_DEPENDENCY_IN_PROD])
     ->ignoreErrorsOnPackageAndPath('alex-kalanis/kw_storage', __DIR__ . '/php-src/Check/Factory.php', [ErrorType::DEV_DEPENDENCY_IN_PROD])
     ->ignoreErrorsOnPackageAndPath('alex-kalanis/kw_files', __DIR__ . '/php-src/Check/Factory.php', [ErrorType::DEV_DEPENDENCY_IN_PROD])
-    ->ignoreErrorsOnPackageAndPath('ext-fileinfo', __DIR__ . '/php-src/Check/LocalVolume2.php', [ErrorType::DEV_DEPENDENCY_IN_PROD])
+    ->ignoreErrorsOnPath(__DIR__ . '/php-src/Check/LocalVolume2.php', [ErrorType::DEV_DEPENDENCY_IN_PROD])
 ;
